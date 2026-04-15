@@ -106,6 +106,7 @@ const MASTERPLAN_SRC = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDA
 const sections = [
   { id: "hero", label: "Home" },
   { id: "details", label: "Event Details" },
+  { id: "agenda", label: "Agenda" },
   { id: "concept", label: "Concept" },
   { id: "entertainment", label: "Entertainment" },
   { id: "venue", label: "Venue" },
@@ -807,7 +808,100 @@ function TriumphLaunchSite() {
         </div>
       </section>
 
-      {/* ══════ EVENT CONCEPT ══════ */}
+      {/* ══════ TENTATIVE AGENDA ══════ */}
+      <section id="agenda" className="section-padding" style={{
+        padding: "120px 40px",
+        background: CHARCOAL,
+        position: "relative",
+      }}>
+        <div style={{
+          position: "absolute", top: 0, left: 0, right: 0, height: "1px",
+          background: `linear-gradient(90deg, transparent, ${SAGE}33, transparent)`,
+        }} />
+        <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <SectionTitle
+            overline="Schedule"
+            title="Tentative Agenda"
+            description="An evening choreographed to perfection — from arrival to the final farewell."
+            light
+          />
+          <div style={{ textAlign: "center", marginTop: "-32px", marginBottom: "48px", direction: "rtl" }}>
+            <div style={{ fontSize: "16px", color: `${SAGE}55`, fontFamily: "'Noto Naskh Arabic', serif" }}>جدول الأمسية</div>
+            <div style={{ fontSize: "12px", color: `${WHITE}33`, fontFamily: "'Noto Naskh Arabic', serif", marginTop: "4px" }}>أمسية مُنسّقة بإتقان — من لحظة الوصول حتى الختام</div>
+          </div>
+
+          <Reveal delay={0.15}>
+            <div style={{ position: "relative", paddingLeft: "40px" }}>
+              {/* Timeline vertical line */}
+              <div style={{
+                position: "absolute", left: "11px", top: "8px", bottom: "8px",
+                width: "1px",
+                background: `linear-gradient(to bottom, ${SAGE}44, ${SAGE}22, ${SAGE}44)`,
+              }} />
+
+              {[
+                { time: "7:00 PM", title: "Registration Opens", ar: "بدء التسجيل", icon: "✦" },
+                { time: "8:30 PM", title: "Event Begins", ar: "بداية الحفل", icon: "✦" },
+                { time: "9:30 PM", title: "Presentations & Talks", ar: "العروض التقديمية والكلمات", icon: "✦" },
+                { time: "9:30 PM", title: "Dinner", ar: "العشاء", icon: "✦" },
+                { time: "10:30 PM", title: "Entertainment — Ahmed Saad Live", ar: "الترفيه — أحمد سعد", icon: "♫" },
+                { time: "12:00 AM", title: "Closing", ar: "الختام", icon: "✦" },
+              ].map((item, i) => (
+                <div key={i} style={{
+                  position: "relative",
+                  marginBottom: i < 5 ? "36px" : "0",
+                }}>
+                  {/* Dot on timeline */}
+                  <div style={{
+                    position: "absolute", left: "-35px", top: "6px",
+                    width: "13px", height: "13px", borderRadius: "50%",
+                    background: i === 0 || i === 5 ? SAGE : `${CHARCOAL_LIGHT}`,
+                    border: `2px solid ${SAGE}66`,
+                    boxShadow: i === 0 || i === 5 ? `0 0 12px ${SAGE}44` : "none",
+                  }} />
+
+                  {/* Content */}
+                  <div style={{
+                    background: `linear-gradient(135deg, rgba(175,200,194,0.05), rgba(15,70,96,0.08))`,
+                    backdropFilter: "blur(16px)",
+                    WebkitBackdropFilter: "blur(16px)",
+                    border: `1px solid ${SAGE}10`,
+                    borderRadius: "14px",
+                    padding: "20px 24px",
+                    boxShadow: `0 4px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.03)`,
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    gap: "16px", flexWrap: "wrap",
+                  }}>
+                    <div style={{ flex: 1 }}>
+                      <div style={{
+                        fontFamily: "'Cormorant Garamond', serif",
+                        fontSize: "20px", fontWeight: 400,
+                        color: WHITE, letterSpacing: "0.5px",
+                      }}>{item.title}</div>
+                      <div style={{
+                        fontSize: "13px", color: `${SAGE}55`,
+                        fontFamily: "'Noto Naskh Arabic', serif",
+                        direction: "rtl", marginTop: "4px",
+                      }}>{item.ar}</div>
+                    </div>
+                    <div style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontSize: "13px", fontWeight: 500,
+                      letterSpacing: "2px", color: SAGE,
+                      whiteSpace: "nowrap",
+                      background: `${SAGE}10`,
+                      padding: "6px 14px", borderRadius: "20px",
+                      border: `1px solid ${SAGE}15`,
+                    }}>{item.time}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+            {/* ══════ EVENT CONCEPT ══════ */}
       <section id="concept" className="section-padding" style={{
         padding: "120px 40px", background: CHARCOAL, position: "relative",
       }}>
