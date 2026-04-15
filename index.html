@@ -10,12 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { overflow-x: hidden; background: #0F1417; }
-  #root { min-height: 100vh; }
-</style>
+<style>* { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } body { overflow-x: hidden; background: #0F1417; } #root { min-height: 100vh; }</style>
 </head>
 <body>
 <div id="root"></div>
@@ -1084,14 +1079,14 @@ function TriumphLaunchSite() {
           desc: "A tangible preview of the Triumph vision — an immersive brand installation that lets guests experience the hotel\'s design philosophy, material palette, and spatial ambition before it rises.",
           descAr: "معاينة حقيقية لرؤية ترايمف — تجربة غامرة تكشف فلسفة التصميم والطموح المعماري للفندق.",
           bg: CHARCOAL, ph: "Mini Triumph Render", phSub: "Scaled hotel model / brand installation — awaiting render" },
+        { id: "mainvenue", num: "06", sub: "The Centrepiece", title: "Main Venue", ar: "القاعة الرئيسية",
+          desc: "The heart of the evening — where ceremony, spectacle, and brand revelation converge. A stage set against the Pyramids, engineered for a moment the industry won\'t forget.",
+          descAr: "قلب الأمسية — حيث تتلاقى المراسم والإبهار وإعلان العلامة التجارية على مسرح بخلفية الأهرامات.",
+          bg: PETROL_DIM, ph: "Main Venue Render", phSub: "Primary event stage & gathering space — awaiting render" },
         { id: "reveal", num: "07", sub: "The Climax", title: "Fireworks & Reveal Moment", ar: "لحظة الكشف والألعاب النارية",
           desc: "The pinnacle of the evening — a breathtaking fireworks display illuminates the sky above the Pyramids as the Triumph Luxury Hotel brand is unveiled to the world. A moment engineered to be unforgettable.",
           descAr: "ذروة الأمسية — عرض ألعاب نارية يُنير سماء الأهرامات لحظة الكشف عن علامة ترايمف الفندقية الفاخرة للعالم.",
           bg: CHARCOAL, ph: "Fireworks Render", phSub: "" },
-        { id: "mainvenue", num: "08", sub: "The Centrepiece", title: "Main Venue", ar: "القاعة الرئيسية",
-          desc: "The heart of the evening — where ceremony, spectacle, and brand revelation converge. A stage set against the Pyramids, engineered for a moment the industry won\'t forget.",
-          descAr: "قلب الأمسية — حيث تتلاقى المراسم والإبهار وإعلان العلامة التجارية على مسرح بخلفية الأهرامات.",
-          bg: PETROL_DIM, ph: "Main Venue Render", phSub: "Primary event stage & gathering space — awaiting render" },
       ].map(s => (
         <section key={s.id} id={s.id} className="section-padding" style={{
           padding: "80px 40px 120px", background: s.bg,
