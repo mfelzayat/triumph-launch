@@ -562,7 +562,7 @@ function TriumphLaunchSite() {
             }}>+</button>
           </div>
 
-          {/* Image with zoom + pan */}
+          {/* Image — truly fullscreen */}
           <div
             onClick={(e) => { e.stopPropagation(); if (lightbox.zoom === 1) zoomIn(); else resetZoom(); }}
             onWheel={handleWheel}
@@ -570,10 +570,9 @@ function TriumphLaunchSite() {
             onPointerMove={handlePointerMove}
             onPointerUp={handlePointerUp}
             style={{
-              maxWidth: "90vw", maxHeight: "85vh",
-              overflow: "hidden", borderRadius: "18px",
-              border: `1px solid ${SAGE}10`,
-              boxShadow: `0 24px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(175,200,194,0.05)`,
+              position: "absolute", inset: 0,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              overflow: "hidden",
               cursor: lightbox.zoom > 1 ? "grab" : "zoom-in",
               touchAction: "none",
             }}
@@ -584,7 +583,7 @@ function TriumphLaunchSite() {
               draggable={false}
               style={{
                 display: "block",
-                maxWidth: "90vw", maxHeight: "85vh",
+                width: "100vw", height: "100vh",
                 objectFit: "contain",
                 transform: `scale(${lightbox.zoom}) translate(${lightbox.panX / lightbox.zoom}px, ${lightbox.panY / lightbox.zoom}px)`,
                 transition: isDragging.current ? "none" : "transform 0.3s cubic-bezier(0.22,1,0.36,1)",
@@ -831,8 +830,8 @@ function TriumphLaunchSite() {
                 textAr: "من لحظة الوصول، تُنشَّط كل الحواس — إضاءة منسّقة، عطور مصممة خصيصاً، وتجربة صوتية غامرة.",
                 img: CONCEPT_SENSORY },
               { title: "Brand Theatre", ar: "مسرح العلامة التجارية",
-                text: "This is not a launch event — it is a declaration. The Triumph brand manifests in every material, every sightline, and every moment. Guests don\'t attend; they become part of the story.",
-                textAr: "هذا ليس حفل إطلاق — إنه إعلان. علامة ترايمف تتجلى في كل مادة وكل زاوية وكل لحظة.",
+                text: "This is not a launch event — it is a declaration. Born from the vision of Mohamed Ayoub Group and brought to life by Triumph Luxury Hotels, every material, every sightline, and every moment manifests a shared ambition. Guests don\'t attend; they witness the birth of a landmark.",
+                textAr: "هذا ليس حفل إطلاق — إنه إعلان. وُلد من رؤية مجموعة محمد أيوب وأحياه ترايمف للفنادق الفاخرة، كل مادة وكل زاوية وكل لحظة تجسّد طموحاً مشتركاً. الضيوف لا يحضرون — بل يشهدون ميلاد معلم جديد.",
                 img: CONCEPT_THEATRE },
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 0.12}>
